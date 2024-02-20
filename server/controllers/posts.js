@@ -143,7 +143,7 @@ export const getAllFollowerPosts = async (req, res) => {
 export const createPost = async (req, res) => {
     try {
         const userId = req.userId;
-        let { dreamDescription, imageUrl, dreamStory, dateTime, location, tags, emotions } = req.body;
+        let { dreamDescription, imageUrl, interpretedDream, dreamStory, dateTime, location, tags, emotions } = req.body;
         const cloudinaryUrl = await cloudinary.uploader.upload(imageUrl);
 
         //Convert tags into array
