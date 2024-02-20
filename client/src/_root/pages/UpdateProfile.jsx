@@ -60,8 +60,6 @@ const UpdateProfile = () => {
 
   //Handler
   const handleUpdate = async (value) => {
-    console.log(value.file);
-    console.log("form: ", form.getValues());
     const updatedUser = await updateUser(
       {
         userId: currentUser._id,

@@ -37,8 +37,6 @@ const Profile = () => {
 
   const isFollowing = currentUser?.following.includes(id) || false;
 
-  console.log("isFollowing", isFollowing);
-
   const handleFollowUser = (e) => {
     e.stopPropagation();
     followUser(id);

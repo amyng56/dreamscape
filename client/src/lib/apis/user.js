@@ -24,7 +24,7 @@ export const createOrGetUser = async (response) => {
 
     // createUser(user);
 
-    console.log(decoded);
+    // console.log(decoded);
 };
 
 export const createUser = async (formData) => {

@@ -2,7 +2,6 @@ import GridPostList from './GridPostList';
 import Loader from './Loader';
 
 const SearchResults = ({ isSearchFetching, searchedPosts, token }) => {
-    console.log('SearchResults: ', searchedPosts);
     if (isSearchFetching) {
         return <Loader />;
     } else if (searchedPosts && searchedPosts?.posts.length > 0) {
