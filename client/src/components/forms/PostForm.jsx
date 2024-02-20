@@ -224,7 +224,7 @@ const PostForm = ({ post, action }) => {
               <Loader /> Visualizing...
             </div>
           ) :
-            action === "Update" ? 'Re-Visualize Your Dream 💫' :
+            form.getValues("imageUrl") ? 'Re-Visualize Your Dream 💫' :
               'Visualize Your Dream 💫'
           }
         </Button>
