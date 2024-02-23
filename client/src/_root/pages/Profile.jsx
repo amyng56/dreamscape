@@ -175,8 +175,8 @@ const Profile = () => {
         {currentProfileUser._id === user.id && (
           <Route path="/liked-posts" element={<LikedPosts />} />
         )}
-        <Route path="/following-users" element={<FollowingUsers currentProfileUserId={id} currentUserFollowingList={currentUser.following} />} />
-        <Route path="/followed-by-users" element={<FollowedByUsers currentProfileUserId={id} currentUserFollowingList={currentUser.following} />} />
+        <Route path="/following-users" element={<FollowingUsers currentProfileUserId={id} currentUserFollowingList={currentUser?.following} />} />
+        <Route path="/followed-by-users" element={<FollowedByUsers currentProfileUserId={id} currentUserFollowingList={currentUser?.following} />} />
       </Routes>
       <Outlet />
     </div>
