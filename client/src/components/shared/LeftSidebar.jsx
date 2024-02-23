@@ -5,7 +5,7 @@ import Loader from "./Loader";
 import { Button } from "../ui/button";
 import { useAuthContext } from "../../context/AuthContext";
 
-const serverMediaUrl = `${process.env.SERVER_URL}/uploads/`;
+const serverMediaUrl = process.env.ENABLE_PROFILEPIC_CLOUDINARY === '1' ? "" : `${process.env.SERVER_URL}/uploads/`;
 
 const LeftSidebar = () => {
     const navigate = useNavigate();

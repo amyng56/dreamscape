@@ -16,7 +16,7 @@ import {
 import { useAuthContext } from "../../context/AuthContext";
 import { downloadImage, formatDateString, multiFormatDateString } from "../../utils";
 
-const serverMediaUrl = `${process.env.SERVER_URL}/uploads/`;
+const serverMediaUrl = process.env.ENABLE_PROFILEPIC_CLOUDINARY === '1' ? "" : `${process.env.SERVER_URL}/uploads/`;
 
 const PostDetails = () => {
   const navigate = useNavigate();

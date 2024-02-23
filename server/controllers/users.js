@@ -278,9 +278,14 @@ export const updateUser = async (req, res) => {
         const { name, bio } = req.body;
         
         if (req.file) {
+            let profilePicture = req.file.filename;
+            if (process.env.ENABLE_PROFILEPIC_CLOUDINARY === '1') {
+                const cloudinaryUrl = await cloudinary.uploader.upload(req.file.path);
+                profilePicture = cloudinaryUrl.url;
+            }
             const updatedUser = await User.findByIdAndUpdate(
                 id,
-                { name, bio, profilePicture: req.file.filename },
+                { name, bio, profilePicture: profilePicture },
                 { new: true }
             ).select('-password');
 

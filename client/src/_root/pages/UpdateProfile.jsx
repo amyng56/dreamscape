@@ -19,7 +19,7 @@ import { ProfileValidation } from "@/lib/validation";
 import { useAuthContext } from "@/context/AuthContext";
 import { useGetUserById, useUpdateUser } from "@/lib/react-query/queriesAndMutations";
 
-const serverMediaUrl = `${process.env.SERVER_URL}/uploads/`;
+const serverMediaUrl = process.env.ENABLE_PROFILEPIC_CLOUDINARY === '1' ? "" : `${process.env.SERVER_URL}/uploads/`;
 
 const UpdateProfile = () => {
   const navigate = useNavigate();

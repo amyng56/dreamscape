@@ -4,7 +4,7 @@ import { PostStats } from "@/components/shared";
 import { useAuthContext } from "../../context/AuthContext";
 import { formatDateString, multiFormatDateString } from "../../utils";
 
-const serverMediaUrl = `${process.env.SERVER_URL}/uploads/`;
+const serverMediaUrl = process.env.ENABLE_PROFILEPIC_CLOUDINARY === '1' ? "" : `${process.env.SERVER_URL}/uploads/`;
 
 const PostCard = ({ post }) => {
   const { user, token } = useAuthContext();

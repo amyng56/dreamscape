@@ -13,7 +13,7 @@ import { useAuthContext } from "@/context/AuthContext";
 import { useGetUserById, useGetCurrentUser, useFollowUser, useUnfollowUser } from "@/lib/react-query/queriesAndMutations";
 import { GridPostList, Loader } from "@/components/shared";
 
-const serverMediaUrl = `${process.env.SERVER_URL}/uploads/`;
+const serverMediaUrl = process.env.ENABLE_PROFILEPIC_CLOUDINARY === '1' ? "" : `${process.env.SERVER_URL}/uploads/`;
 
 const StatBlock = ({ value, label, active }) => (
   <div className="flex-center gap-2">
