@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { useFollowUser } from "@/lib/react-query/queriesAndMutations";
 import Loader from "./Loader";
 
-const serverMediaUrl = `${process.env.SERVER_URL}/uploads/`;
+const serverMediaUrl = process.env.ENABLE_PROFILEPIC_CLOUDINARY === '1' ? "" : `${process.env.SERVER_URL}/uploads/`;
 
 const UserCard = ({ user, isFollowing = false, token, isCurrentUser }) => {
   const { mutate: followUser, isPending: isLoadingFollowUser } = useFollowUser(token);

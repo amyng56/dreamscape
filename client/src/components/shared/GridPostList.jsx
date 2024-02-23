@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { PostStats } from "@/components/shared";
 import { useAuthContext } from "@/context/AuthContext";
 
-const serverMediaUrl = `${process.env.SERVER_URL}/uploads/`;
+const serverMediaUrl = process.env.ENABLE_PROFILEPIC_CLOUDINARY === '1' ? "" : `${process.env.SERVER_URL}/uploads/`;
 
 const GridPostList = ({ posts, showUser = true, showStats = true }) => {
   const { user, token } = useAuthContext();
